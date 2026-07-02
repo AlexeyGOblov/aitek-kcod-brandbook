@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" role="img" aria-label="АйТек КЦОД, производственная версия">
+  <defs>
+    <style>
+      @font-face{font-family:Muller;src:url("../fonts/MullerExtraBold.woff2") format("woff2");font-weight:800}
+      .main{font-family:Muller,"Segoe UI",sans-serif;font-weight:800;font-size:64px;letter-spacing:-2.6px}
+    </style>
+  </defs>
+  <text class="main" x="380" y="133" text-anchor="middle" fill="#fff">
+    <tspan>АйТек</tspan><tspan dx="17">·</tspan><tspan dx="17">КЦОД</tspan>
+  </text>
+</svg>

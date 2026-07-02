@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="220" viewBox="0 0 760 220" role="img" aria-label="АйТек КЦОД, контейнерные центры обработки данных">
+  <defs>
+    <style>
+      @font-face{font-family:Muller;src:url("../fonts/MullerExtraBold.woff2") format("woff2");font-weight:800}
+      .main{font-family:Muller,"Segoe UI",sans-serif;font-weight:800;font-size:64px;letter-spacing:-2.6px}
+      .sub{font-family:Muller,"Segoe UI",sans-serif;font-weight:800;font-size:13px;letter-spacing:0;text-transform:uppercase}
+    </style>
+  </defs>
+  <rect width="760" height="220" fill="#fbfcfe"/>
+  <text class="main" x="380" y="99" text-anchor="middle" fill="#0d1d2b">
+    <tspan>АйТек</tspan><tspan fill="#0e8fe0" dx="17">·</tspan><tspan fill="#0e8fe0" dx="17">КЦОД</tspan>
+  </text>
+  <text class="sub" x="379.781" y="132" text-anchor="middle" fill="#637486" textLength="416.5" lengthAdjust="spacing">контейнерные центры обработки данных</text>
+</svg>

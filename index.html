@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Брендбук АйТек КЦОД</title>
+<meta name="description" content="Презентация бренда АйТек КЦОД: идея, логотип, юридическое обоснование и варианты брендинга контейнерных центров обработки данных.">
+<style>
+@font-face{font-family:Muller;src:url("assets/fonts/MullerRegular.woff2?v=3") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Muller;src:url("assets/fonts/MullerMedium.woff2?v=3") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:Muller;src:url("assets/fonts/MullerBold.woff2?v=3") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:Muller;src:url("assets/fonts/MullerExtraBold.woff2?v=3") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+
+:root{
+  --paper:#f6f8fb;
+  --white:#fff;
+  --ink:#0d1d2b;
+  --muted:#627184;
+  --line:#dce6ef;
+  --blue:#0e8fe0;
+  --blue-deep:#0a6cb0;
+  --signal:#f2a900;
+  --hull:#0e518d;
+  --navy:#0d1d2b;
+  --steel:#6e8296;
+  --soft:#eef4f9;
+  --shadow:0 22px 58px rgba(13,29,43,.12);
+  --shadow-soft:0 14px 34px rgba(13,29,43,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--paper)}
+body{font-family:Muller,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:rgba(14,143,224,.18)}
+
+.topline{position:fixed;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--blue),var(--blue-deep));z-index:20}
+.nav{position:sticky;top:4px;z-index:19;background:rgba(246,248,251,.86);backdrop-filter:blur(18px);border-bottom:1px solid rgba(220,230,239,.86)}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 24px}
+.nav .wrap{height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav-title{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);white-space:nowrap}
+.nav-links{display:flex;gap:22px;font-size:13px;font-weight:700;color:var(--muted)}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--blue-deep)}
+
+.section{padding:84px 0;border-bottom:1px solid var(--line)}
+.section.white{background:var(--white)}
+.section.dark{background:linear-gradient(135deg,#0d1d2b,#081622);color:#fff;position:relative;overflow:hidden}
+.section.dark::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,#000,transparent 82%);pointer-events:none}
+.section.dark .wrap{position:relative}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,460px);gap:48px;align-items:end;margin-bottom:36px}
+.kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:12px}
+.section.dark .kicker{color:#66c5f3}
+h1,h2,h3{font-weight:800;letter-spacing:-.045em}
+h1{font-size:clamp(44px,7vw,86px);line-height:.98;max-width:900px}
+h2{font-size:clamp(34px,4.6vw,58px);line-height:1.02}
+h3{font-size:24px;line-height:1.14}
+h1,h2,h3,p,.lead,.intro,.meta,.note,.r-card{min-width:0;overflow-wrap:break-word}
+.lead{font-size:20px;color:var(--muted);max-width:640px;margin-top:24px}
+.section.dark .lead,.section.dark .intro{color:rgba(255,255,255,.72)}
+.intro{font-size:18px;color:var(--muted);line-height:1.58}
+
+.brandline{display:inline-flex;align-items:center;gap:.42em;white-space:nowrap;font-weight:800;letter-spacing:-.045em;color:var(--ink)}
+.brandline .dot,.brandline .accent{color:var(--blue)}
+.brandline .accent{letter-spacing:-.035em}
+.brandline.invert{color:#fff}
+.brandline.invert .dot,.brandline.invert .accent{color:#66c5f3}
+.subline{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--steel);white-space:nowrap}
+.subline.light{color:rgba(255,255,255,.72)}
+.logo-stack{display:inline-grid;justify-items:center;gap:7px}
+.logo-stack.left{justify-items:start}
+
+.hero{min-height:760px;display:grid;align-items:center;padding:76px 0 54px;background:
+  linear-gradient(90deg,rgba(246,248,251,.99) 0%,rgba(246,248,251,.96) 44%,rgba(246,248,251,.66) 72%,rgba(246,248,251,.26) 100%),
+  url("assets/brandbook/brandbook-container-01-render.png") center right/auto 100% no-repeat}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:54px;align-items:center}
+.hero-grid>*,.section-head>*,.logo-showcase>*,.system-grid>*,.container-grid>*,.surface-grid>*,.final-box>*{min-width:0}
+.hero h1 span{color:var(--blue-deep)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.tag{border:1px solid var(--line);background:rgba(255,255,255,.78);padding:10px 13px;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+.hero-panel{background:rgba(255,255,255,.88);border:1px solid var(--line);box-shadow:var(--shadow);padding:30px;display:grid;gap:28px}
+.hero-panel .logo-img{width:100%;max-width:360px;margin:auto}
+.hero-specs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.spec{border-top:1px solid var(--line);padding-top:12px}
+.spec b{display:block;font-size:13px;color:var(--ink)}
+.spec span{display:block;margin-top:4px;font-size:13px;color:var(--muted)}
+
+.logo-showcase{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch}
+.logo-main{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);padding:42px;display:grid;place-items:center;min-height:420px}
+.logo-main img{width:min(560px,100%)}
+.logo-notes{display:grid;gap:14px}
+.note{background:#fff;border:1px solid var(--line);padding:22px}
+.note strong{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:9px}
+.note p{font-size:15px;color:var(--muted);line-height:1.55}
+
+.rationale{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.r-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);padding:24px;min-height:260px;display:flex;flex-direction:column}
+.r-card span{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-deep)}
+.r-card h3{margin-top:12px}
+.r-card p{font-size:14.5px;color:var(--muted);line-height:1.58;margin-top:16px}
+.r-card small{margin-top:auto;padding-top:20px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
+.legal-note{margin-top:18px;border:1px solid rgba(14,143,224,.24);background:rgba(14,143,224,.07);padding:18px 20px;color:var(--muted);font-size:13.5px;line-height:1.55}
+.legal-note b{color:var(--ink)}
+.legal-note a{color:var(--blue-deep);font-weight:700;text-underline-offset:3px}
+
+.system-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.asset-board{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);padding:28px}
+.asset-board.dark-board{background:var(--navy)}
+.asset-board img{width:100%}
+.asset-caption{border-top:1px solid var(--line);padding-top:16px;margin-top:16px;color:var(--muted);font-size:14px}
+.dark-board .asset-caption{border-color:rgba(255,255,255,.14);color:rgba(255,255,255,.68)}
+.palette{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.palette.aux{grid-template-columns:repeat(2,1fr);margin-top:12px}
+.palette.aux .swatch{min-height:120px}
+.swatch{min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#fff;position:relative;overflow:hidden}
+.swatch::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,0,0,.22))}
+.swatch b,.swatch small,.swatch span{position:relative}
+.swatch b{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.swatch small{font-size:12px;opacity:.86;margin-top:3px}
+.swatch span{font-size:12.5px;line-height:1.45;margin-top:8px;opacity:.92}
+.swatch.paper{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.swatch.paper::before{background:linear-gradient(180deg,transparent,rgba(13,29,43,.05))}
+.swatch.ink{background:var(--ink)}
+.swatch.blue{background:var(--blue)}
+.swatch.signal{background:var(--signal);color:#3d2b00}
+.swatch.hull{background:var(--hull)}
+.palette-note-line{margin-top:14px;font-size:13px;color:rgba(255,255,255,.62);line-height:1.5}
+
+.container-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.container-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);overflow:hidden}
+.container-card.wide{grid-column:1/-1}
+.container-visual{position:relative;min-height:390px;background:#dfe6ee;overflow:hidden}
+.container-card.wide .container-visual{min-height:520px}
+.container-visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.container-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,16,27,0),rgba(5,16,27,.12));pointer-events:none}
+.meta{padding:22px 24px 24px}
+.meta span{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:8px}
+.meta p{font-size:14.5px;color:var(--muted);line-height:1.55;margin-top:10px}
+.meta-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.meta-tags i{font-style:normal;border:1px solid var(--line);padding:6px 8px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+
+.peek-block{margin:40px auto 4px}
+.peek-block.widget{max-width:680px}
+.peek-block.video{max-width:1020px;margin-top:0}
+.peek-media{position:relative;width:100%;aspect-ratio:3/2;background:#eef2f6;border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow-soft)}
+.peek-media iframe,.peek-media video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.peek-cap{margin-top:14px;font-size:13.5px;color:var(--steel);text-align:center}
+
+.surface-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.surface-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);overflow:hidden}
+.surface-media{position:relative;min-height:360px;background:#e9eef4;overflow:hidden}
+.surface-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.surface-body{padding:22px 24px 24px}
+.surface-body span{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:8px}
+.surface-body p{font-size:14.5px;color:var(--muted);line-height:1.55;margin-top:10px}
+.surfaces-side{display:grid;gap:22px}
+
+.asset-board.span2{grid-column:1/-1}
+
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.prod-card{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-soft);padding:22px}
+.prod-card strong{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px}
+.prod-card.ban strong{color:var(--ink)}
+.prod-card p{font-size:14.5px;color:var(--muted);line-height:1.58}
+.prod-scroll{overflow-x:auto;margin-top:22px}
+.prod-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);min-width:640px}
+.prod-table th,.prod-table td{border:1px solid var(--line);padding:10px 12px;font-size:13.5px;text-align:left}
+.prod-table th{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);background:var(--soft)}
+.prod-table td{color:var(--muted)}
+.prod-table td:first-child{color:var(--ink);font-weight:700}
+.prod-note{margin-top:14px;font-size:13.5px;color:var(--steel);line-height:1.55}
+
+.final{padding:84px 0;background:#fff}
+.final-box{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:48px 0}
+.final-copy{font-size:19px;color:var(--muted);line-height:1.58}
+.final-logo{justify-self:end;width:min(420px,100%)}
+
+.rules-wrap{margin-top:26px;border:1px solid var(--line);background:var(--soft);padding:28px}
+.rules-intro{margin-top:10px;font-size:15px;color:var(--muted);max-width:760px;line-height:1.55}
+.rules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.rule-board{background:#fff;border:1px solid var(--line);padding:20px}
+.rule-board strong{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px}
+.rule-board.ban strong{color:var(--ink)}
+.rule-board ul{list-style:none;display:grid;gap:10px}
+.rule-board li{font-size:14px;color:var(--muted);line-height:1.5;padding-left:14px;position:relative}
+.rule-board li::before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;background:var(--blue)}
+.rule-board.ban li::before{background:var(--signal)}
+.rules-tech{margin-top:16px;font-size:13.5px;color:var(--steel);line-height:1.5}
+.rules-scheme{margin-top:22px;background:#fff;border:1px solid var(--line);padding:24px}
+.rules-scheme>strong{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:6px}
+.rules-scheme img{width:100%;margin:16px 0;border:1px solid var(--line)}
+.rules-scheme .two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.rules-scheme .two div b{color:var(--ink)}
+.rules-scheme .two div{font-size:14px;color:var(--muted);line-height:1.55}
+
+@media(max-width:980px){
+  .nav-links{display:none}
+  .hero{min-height:auto;background-position:center bottom;background-size:cover}
+  .hero-grid,.section-head,.logo-showcase,.system-grid,.surface-grid,.final-box{grid-template-columns:1fr}
+  .hero-panel{max-width:500px}
+  .rationale,.container-grid,.rules-grid,.prod-grid,.rules-scheme .two{grid-template-columns:1fr}
+  .container-card.wide{grid-column:auto}
+  .palette,.palette.aux{grid-template-columns:repeat(2,1fr)}
+  .final-logo{justify-self:start}
+}
+@media(max-width:620px){
+  .wrap{padding:0 16px}
+  .nav .wrap{height:58px}
+  .nav-title{font-size:11px}
+  .section{padding:58px 0}
+  .hero{padding:44px 0 28px}
+  h1{font-size:40px}
+  h2{font-size:34px}
+  .lead,.intro{font-size:16px}
+  .hero-specs{grid-template-columns:1fr}
+  .logo-main{padding:22px;min-height:260px}
+  .palette{grid-template-columns:1fr}
+  .container-visual,.container-card.wide .container-visual{min-height:280px}
+  .surface-media{min-height:260px}
+}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<nav class="nav" aria-label="Разделы брендбука">
+  <div class="wrap">
+    <div class="nav-title">АйТек КЦОД · брендбук</div>
+    <div class="nav-links">
+      <a href="#logo">Логотип</a>
+      <a href="#why">Логика</a>
+      <a href="#system">Система</a>
+      <a href="#container">Контейнер</a>
+      <a href="#production">Производство</a>
+      <a href="#surfaces">Носители</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="kicker">Версия 1.0 · брендбук</div>
+          <h1>АйТек <span>КЦОД</span><br>коротко, по&#8209;русски, инженерно</h1>
+          <p class="lead">Короткая кириллическая система для инженерного продукта: узнаваемый основной бренд, ясное направление и рабочие правила применения на контейнерах, документах и деловых носителях.</p>
+          <div class="hero-actions">
+            <div class="tag">кириллица</div>
+            <div class="tag">B2B-инфраструктура</div>
+            <div class="tag">контейнерные ЦОД</div>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Основной логотип">
+          <img class="logo-img" src="assets/logo-variants/aitek-kcod-01-base.svg" alt="Основной логотип АйТек КЦОД">
+          <div class="hero-specs">
+            <div class="spec"><b>Название</b><span>АйТек · КЦОД</span></div>
+            <div class="spec"><b>Подпись</b><span>контейнерные центры обработки данных</span></div>
+            <div class="spec"><b>Роль</b><span>продуктовая линейка</span></div>
+            <div class="spec"><b>Носитель</b><span>цифра, печать, корпус</span></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="logo">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Базовый знак</div>
+          <h2>Короткое имя, которое сразу называет продукт</h2>
+        </div>
+        <p class="intro">В логотипе АйТек остается первым сигналом доверия, а КЦОД сразу обозначает направление: контейнерные центры обработки данных. Короткая русская формула легко читается на корпусе, в документах и в навигации.</p>
+      </div>
+      <div class="logo-showcase">
+        <div class="logo-main">
+          <img src="assets/logo-variants/aitek-kcod-01-base.svg" alt="АйТек КЦОД, базовый логотип с подписью">
+        </div>
+        <div class="logo-notes">
+          <div class="note">
+            <strong>Иерархия</strong>
+            <p>АйТек читается первым и переносит доверие основного бренда. КЦОД выделен синим как продуктовая и инженерная специализация.</p>
+          </div>
+          <div class="note">
+            <strong>Расшифровка</strong>
+            <p>Подпись «контейнерные центры обработки данных» встроена в знак: К в КЦОД - это «контейнерные», подпись прямо расшифровывает аббревиатуру. Растянута ровно по ширине основной строки.</p>
+          </div>
+          <div class="note">
+            <strong>Точка</strong>
+            <p>Точка работает как связка между корпоративным брендом и направлением. Она короче дефиса и спокойнее слеша.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Почему именно так</div>
+          <h2>Короткое русское название, которое не спорит с законом и брендом</h2>
+        </div>
+        <p class="intro">Задача не в том, чтобы придумать отдельный новый бренд. Задача - создать ясную продуктовую маркировку направления, которая выглядит серьезно в закупках, проектной документации и на промышленном объекте.</p>
+      </div>
+      <div class="rationale">
+        <article class="r-card">
+          <span>01</span>
+          <h3>Основной бренд сохранен</h3>
+          <p>АйТек остается главным считываемым элементом. Это снижает риск ощущения «новой неизвестной компании» и сохраняет накопленную репутацию.</p>
+          <small>АйТек первым</small>
+        </article>
+        <article class="r-card">
+          <span>02</span>
+          <h3>КЦОД быстро читается в B2B</h3>
+          <p>Аббревиатура понятна инженерам, ИТ-директорам, проектировщикам и закупочным командам. Она короткая и хорошо держится в макетах.</p>
+          <small>коротко и по делу</small>
+        </article>
+        <article class="r-card">
+          <span>03</span>
+          <h3>Подпись снимает неоднозначность</h3>
+          <p>Расшифровка нужна в первом контакте: на обложке КП, на контейнере, на выставочном стенде, в презентации и в визитке.</p>
+          <small>понятно с первого взгляда</small>
+        </article>
+        <article class="r-card">
+          <span>04</span>
+          <h3>Кириллица юридически аккуратнее</h3>
+          <p>Публичная коммуникация на русском языке проще проходит проверку и не создает лишнего риска вокруг англицизмов.</p>
+          <small>без лишнего английского</small>
+        </article>
+      </div>
+      <p class="legal-note"><b>Юридическая рамка.</b> Федеральный закон от 24.06.2025 №168-ФЗ вводит с 1 марта 2026 года дополнительные требования к русскому языку в информации для публичного ознакомления потребителей. Для этого брендбук избегает англицизмов в названии направления и использует русскую расшифровку. Это дизайн-обоснование, не юридическое заключение. Источники: <a href="https://publication.pravo.gov.ru/document/0001202506240035" target="_blank" rel="noopener">официальная публикация №168-ФЗ</a>, <a href="https://www.consultant.ru/law/hotdocs/89768.html" target="_blank" rel="noopener">обзор КонсультантПлюс</a>.</p>
+    </div>
+  </section>
+
+  <section class="section white">
+    <div class="wrap">
+      <div class="peek-block video">
+        <div class="peek-media">
+          <video controls muted loop autoplay playsinline preload="auto" poster="container-3d/kling/hero_dusk_v6b.png">
+            <source src="container-3d/kling/drone_02.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="peek-cap">Контейнер на площадке ЦОД-кампуса, в сумерки</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="system">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Система</div>
+          <h2>Основная, инверсная и производственная версии</h2>
+        </div>
+        <p class="intro">Логотип должен одинаково спокойно жить в коммерческом предложении, на темной панели, на белом контейнере и в малом размере. Поэтому система ограничена несколькими устойчивыми вариантами.</p>
+      </div>
+      <div class="system-grid">
+        <div class="asset-board">
+          <img src="assets/logo-variants/aitek-kcod-01-base.svg" alt="Основная версия логотипа">
+          <p class="asset-caption">Основная версия: белый или очень светлый фон, документы, сайт, презентации, светлые элементы корпуса.</p>
+        </div>
+        <div class="asset-board dark-board">
+          <img src="assets/logo-variants/aitek-kcod-05-dark.svg" alt="Инверсная версия логотипа">
+          <p class="asset-caption">Инверсная версия: темные панели, спецодежда, презентационные обложки, ночные фото и навигация.</p>
+        </div>
+        <div class="asset-board dark-board span2">
+          <img src="assets/logo-variants/aitek-kcod-07-production.svg" alt="Производственная версия: полностью белый знак одной строкой без расшифровки">
+          <p class="asset-caption">Производственная версия: полностью белая, одна строка без расшифровки. Для синего корпуса, гофрированной стены, трафаретной окраски и серийной маркировки.</p>
+        </div>
+      </div>
+      <div class="palette">
+        <div class="swatch paper"><b>Белый</b><small>#FFFFFF · RAL 9016</small><span>Основа: корпуса, документы, знак на темном и на синем.</span></div>
+        <div class="swatch ink"><b>АйТек графит</b><small>#0D1D2B · RAL 5004</small><span>Основной бренд, заголовки, текст, темные панели.</span></div>
+        <div class="swatch blue"><b>КЦОД синий</b><small>#0E8FE0 · RAL 5015</small><span>Продуктовый акцент: КЦОД, ссылки, полосы. Цвет графики, не краски корпуса.</span></div>
+      </div>
+      <div class="palette aux">
+        <div class="swatch signal"><b>Сигнальный желтый</b><small>#F2A900 · RAL 1003</small><span>Служебный: только сигнальная полоса и предупреждения. Текстом не используется.</span></div>
+        <div class="swatch hull"><b>Корпус, темно-синий</b><small>RAL 5010</small><span>Краска синего корпуса контейнера. Фирменным синим корпус не красят.</span></div>
+      </div>
+      <p class="palette-note-line">Палитра сознательно короткая: три основных цвета и один служебный. Коды для печати (CMYK) и все технические детали - в разделе «Производство».</p>
+    </div>
+  </section>
+
+  <section class="section white" id="container">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Брендинг контейнера</div>
+          <h2>Пять сценариев нанесения на ребристый морской контейнер</h2>
+        </div>
+        <p class="intro">Все варианты показаны на фотореалистичных визуализациях типового морского контейнера с ребристой боковой стенкой и открытым блоком охлаждения. На гофре живут только крупные жирные надписи: мелкий текст и тонкие линии ломаются на гранях волны, поэтому их на стену не наносят. Обязательные правила для подрядчиков и дизайнеров - под примерами.</p>
+      </div>
+      <div class="container-grid">
+        <article class="container-card wide">
+          <div class="container-visual">
+            <img src="assets/brandbook/brandbook-container-01-render.png" alt="Рендер ребристого контейнера с крупным логотипом АйТек КЦОД по центру">
+          </div>
+          <div class="meta">
+            <span>01 · флагман</span>
+            <h3>Лого крупно по центру боковой стены</h3>
+            <p>Самый заметный вариант для выставки, презентационной отгрузки, фото в кейсах и модулей, где АйТек выступает главным производителем решения. На стене только главная строка знака - расшифровка на гофру не наносится.</p>
+            <div class="meta-tags"><i>максимальная узнаваемость</i><i>для собственных модулей</i><i>фото и PR</i></div>
+          </div>
+        </article>
+
+        <article class="container-card">
+          <div class="container-visual">
+            <img src="assets/brandbook/brandbook-container-02-render.png" alt="Рендер ребристого контейнера с угловой маркировкой АйТек КЦОД">
+          </div>
+          <div class="meta">
+            <span>02 · угловая маркировка</span>
+            <h3>Лого в углу, корпус остается чистым</h3>
+            <p>Подходит для объектов, где важна аккуратность: логотип виден, но не превращает инженерное изделие в рекламную поверхность. На синем корпусе строка полностью белая, высотой не меньше одной волны гофры.</p>
+            <div class="meta-tags"><i>сдержанно</i><i>для эксплуатации</i></div>
+          </div>
+        </article>
+
+        <article class="container-card">
+          <div class="container-visual">
+            <img src="assets/brandbook/brandbook-container-03-render.png" alt="Рендер ребристого контейнера с логотипом клиента по центру и АйТек КЦОД в углу">
+          </div>
+          <div class="meta">
+            <span>03 · клиентский проект</span>
+            <h3>ГранитСеть по центру, АйТек второстепенно</h3>
+            <p>Сценарий для поставок под бренд заказчика: центральная зона отдана вымышленному клиенту, АйТек остается в углу как производитель или технологический партнер. Логотип клиента - в упрощенной версии для гофры (жирное начертание без засечек, эмблема без мелких деталей), по правилу co-branding.</p>
+            <div class="meta-tags"><i>co-branding</i><i>клиент главный</i><i>партнерская роль</i></div>
+          </div>
+        </article>
+
+        <article class="container-card">
+          <div class="container-visual">
+            <img src="assets/brandbook/brandbook-container-04-render.png" alt="Рендер ребристого синего контейнера с белой маркировкой АйТек КЦОД и крупным белым кодом К-12">
+          </div>
+          <div class="meta">
+            <span>04 · серийная маркировка</span>
+            <h3>Белая маркировка и крупный код модуля</h3>
+            <p>На синем корпусе весь знак белый: расчет контраста показал, что на синем металле уверенно читается только белый. Крупным делается код модуля (К-12), а «АйТек · КЦОД» идет строкой-спутником рядом - две надписи крупнее полуметра на одну стену не помещаются. Служебные данные уходят на дверь стандартной мелкой маркировкой.</p>
+            <div class="meta-tags"><i>серия</i><i>учет модулей</i></div>
+          </div>
+        </article>
+
+        <article class="container-card">
+          <div class="container-visual">
+            <img src="assets/brandbook/brandbook-container-05-render.png" alt="Рендер ребристого контейнера с темным технологическим блоком АйТек КЦОД">
+          </div>
+          <div class="meta">
+            <span>05 · акцентная инверсия</span>
+            <h3>Темный технологический блок на белом корпусе</h3>
+            <p>Более выразительный вариант для демонстрационных модулей, выставок и промо-фото, где нужно быстро показать технологичность решения. Цветные полосы идут вертикально, вдоль волн гофры, поэтому не ломаются; мелких строк на темном поле нет.</p>
+            <div class="meta-tags"><i>выставки</i><i>демо-модули</i></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="peek-block widget">
+        <div class="peek-media">
+          <iframe src="container-3d/viewer.html" title="Раскручиваемая 3D-модель контейнера АйТек КЦОД" loading="lazy"></iframe>
+        </div>
+        <p class="peek-cap">Можно покрутить мышкой</p>
+      </div>
+
+      <div class="rules-wrap" id="rules">
+        <div class="kicker">Обязательно к применению</div>
+        <h3>Правила нанесения на гофрированную стену</h3>
+        <p class="rules-intro">Одна волна гофры морского контейнера - около 28 см при глубине 3,6 см. Всё, что мельче волны, попадает на её наклонные грани и полосы тени: буквы ломаются, линии превращаются в зигзаг. Отсюда три группы требований к подрядчикам и дизайнерам.</p>
+        <div class="rules-grid">
+          <div class="rule-board">
+            <strong>Размер</strong>
+            <ul>
+              <li>Главная надпись (АйТек · КЦОД, код модуля) - высота букв от двух волн гофры. Только самое жирное начертание: штрих буквы не тоньше плоской грани волны.</li>
+              <li>Угловая маркировка - одна строка высотой от одной волны (около 28 см).</li>
+              <li>Рядом с крупным кодом модуля (К-12 и т.п.) строка «АйТек · КЦОД» идет спутником от 28 см: две надписи крупнее полуметра на одной стене не помещаются, поэтому крупным делается код, а бренд - строкой-спутником.</li>
+              <li>Проверка расстоянием: 2,5 см высоты буквы на каждые 3 м дистанции чтения, и закладывайте двойной запас.</li>
+            </ul>
+          </div>
+          <div class="rule-board">
+            <strong>Цвет</strong>
+            <ul>
+              <li>На синем корпусе весь знак только белый: у белого запас читаемости 5-8 крат, у остальных цветов палитры - 1,5-3, они тонут.</li>
+              <li>Полноцветная версия знака (графит + синий) живет на белом корпусе.</li>
+              <li>Желтый - только толстой сигнальной полосой от 15 см, текстом не используется. Корпус красится краской по RAL из раздела «Производство»: фирменный синий - цвет графики, корпус им не красят.</li>
+            </ul>
+          </div>
+          <div class="rule-board ban">
+            <strong>Запрещено</strong>
+            <ul>
+              <li>Мелкий текст на гофре: расшифровка «контейнерные центры обработки данных», слоганы, подписи под кодом модуля. Служебные и учетные данные наносятся на дверь стандартной маркировкой.</li>
+              <li>Тонкие линии, рамки и подчеркивания поперек волн. Вертикальные полосы вдоль волн допустимы.</li>
+              <li>Цветные плашки-подложки под знак: маркировка ложится прямо на металл.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="rules-scheme">
+          <strong>Компенсация гофры - два разных приема</strong>
+          <img src="assets/brandbook/scheme-apply.svg" alt="Пара макет-стена: строка растягивается по ширине на плёнке и после облегания гофры читается верно; формула растяжки">
+          <img src="assets/brandbook/scheme-corrugation.svg" alt="Толщина штриха и просвет не тоньше плоской грани волны, мерка - сама волна">
+          <div class="two">
+            <div><b>1. Растяжка по ширине.</b> Плёнка (или краска) ложится на волнистую поверхность, где металла по контуру волны больше, чем видно спереди - без компенсации рисунок сожмётся по горизонтали. Принцип: растяните макет по ширине (и только по ширине - вдоль вертикального ребра поверхность плоская) на столько, насколько длина контура волны больше её видимой ширины. Замерьте профиль конкретного контейнера: чем глубже волна, тем сильнее растяжка. Принцип один для любого логотипа и размера - тянется весь рисунок целиком, пропорции букв и промежутков сохраняются.</div>
+            <div><b>2. Толщина и промежутки.</b> Отдельно от растяжки: штрих букв и просветы между ними - не тоньше плоской грани волны, иначе тонкое тонет в тенях скатов, буквы рвутся и слипаются. Отсюда самое жирное начертание и чуть более широкие промежутки между буквами. Ориентир по размеру - от самой волны, а не в абсолютных сантиметрах.</div>
+          </div>
+        </div>
+        <p class="rules-tech"><b>Логотип клиента (co-branding).</b> Клиентский знак наносится в упрощенной версии для гофры: жирное начертание без засечек, эмблема без мелких деталей и элементов тоньше 5-7 см (одна грань волны), высота от двух волн. Версию для нанесения готовит и согласует дизайнер АйТек - оригинал клиента с тонкими штрихами и засечками на гофру не идет.</p>
+        <p class="rules-tech">Технология: самоклеящаяся пленка или окраска по трафарету. Детальная графика и мелкая типографика на гофрированную стену не наносятся ни в каком виде.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white" id="production">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Для подрядчиков и дизайнеров</div>
+          <h2>Производственная спецификация</h2>
+        </div>
+        <p class="intro">Все, что нужно типографии, оклейщику и дизайнеру, чтобы воспроизвести знак без звонков и самодеятельности: шрифт, коды цветов для печати и краски, версии знака, охранное поле и запреты.</p>
+      </div>
+      <div class="prod-grid">
+        <div class="prod-card">
+          <strong>Шрифт</strong>
+          <p>Знак и заголовки набраны шрифтом <b>Muller</b>: основная строка - начертание ExtraBold, подпись-расшифровка - Bold. Шрифт коммерческий: файлы начертаний вместе с макетами выдает владелец бренда (контакт ниже). Заменять похожими шрифтами нельзя.</p>
+        </div>
+        <div class="prod-card">
+          <strong>Версии знака и файлы</strong>
+          <p>Три версии: <b>основная</b> (графит + синий, светлый фон), <b>инверсная</b> (белая с голубым, темный фон) и <b>производственная</b> (полностью белая, одна строка без расшифровки - синий корпус, гофра, трафарет). Исходники в SVG и PNG для всех трех версий запрашиваются у владельца бренда - файлы из чужих рук не использовать.</p>
+        </div>
+        <div class="prod-card">
+          <strong>Охранное поле и минимальный размер</strong>
+          <p>Вокруг знака - свободная зона не меньше высоты буквы «А» со всех сторон: ни текста, ни рамок, ни других логотипов. Минимальная ширина полной версии с расшифровкой - 60 мм в печати и 220 px на экране; если места меньше - использовать строку без расшифровки (от 30 мм / 120 px).</p>
+        </div>
+        <div class="prod-card ban">
+          <strong>Как нельзя</strong>
+          <p>Не растягивать и не сжимать по одной оси, не перекрашивать в другие цвета, не обводить контуром, не добавлять тень, не набирать имя другим шрифтом, не ставить на пестрое фото без спокойной подложки, не наносить расшифровку на гофрированную стену.</p>
+        </div>
+      </div>
+      <div class="prod-scroll">
+        <table class="prod-table">
+          <thead><tr><th>Цвет</th><th>Экран (HEX)</th><th>Печать (CMYK)</th><th>Краска (RAL)</th><th>Применение</th></tr></thead>
+          <tbody>
+            <tr><td>Белый</td><td>#FFFFFF</td><td>0 · 0 · 0 · 0</td><td>RAL 9016</td><td>корпуса, фон документов, знак на темном и синем</td></tr>
+            <tr><td>АйТек графит</td><td>#0D1D2B</td><td>70 · 33 · 0 · 83</td><td>RAL 5004</td><td>текст, «АйТек», темные панели</td></tr>
+            <tr><td>КЦОД синий</td><td>#0E8FE0</td><td>94 · 36 · 0 · 12</td><td>RAL 5015</td><td>«КЦОД», акценты графики и цифры</td></tr>
+            <tr><td>Сигнальный желтый</td><td>#F2A900</td><td>0 · 30 · 100 · 5</td><td>RAL 1003</td><td>сигнальная полоса, предупреждения</td></tr>
+            <tr><td>Корпус, темно-синий</td><td>#0E518D (ориентир)</td><td>-</td><td>RAL 5010</td><td>краска синего корпуса контейнера</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="prod-note">CMYK указан ориентировочно - перед тиражом сверять по цветопробе. Исходники знака и шрифта выдает владелец бренда: ООО «АйТек», info@aitek.ru. Любой макет перед производством отправляется владельцу на согласование.</p>
+    </div>
+  </section>
+
+  <section class="section" id="surfaces">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Носители</div>
+          <h2>Бренд работает не только на контейнере</h2>
+        </div>
+        <p class="intro">Система должна одинаково уверенно выглядеть в деловой коммуникации и в производственной среде. Ниже - базовые направления применения, которые можно развивать в отдельные макеты.</p>
+      </div>
+      <div class="surface-grid">
+        <article class="surface-card">
+          <div class="surface-media">
+            <img src="assets/brandbook/brandbook-reports-render.png" alt="Рендер отчетов и технической документации с напечатанным логотипом АйТек КЦОД">
+          </div>
+          <div class="surface-body">
+            <span>Документы</span>
+            <h3>КП, паспорта решений и отчеты</h3>
+            <p>На документах логотип задает спокойный инженерный тон: без лишней декоративности, с понятной расшифровкой направления.</p>
+          </div>
+        </article>
+        <div class="surfaces-side">
+          <article class="surface-card">
+            <div class="surface-media">
+              <img src="assets/brandbook/brandbook-merch-render.png" alt="Рендер сувенирной продукции с нанесенным логотипом АйТек КЦОД">
+            </div>
+            <div class="surface-body">
+              <span>Производственная культура</span>
+              <h3>Каски, нашивки, блокноты</h3>
+              <p>Мерч выглядит как часть инженерной команды, а не как случайная рекламная сувенирка.</p>
+            </div>
+          </article>
+          <article class="surface-card">
+            <div class="surface-media">
+              <img src="assets/brandbook/brandbook-cards-render.png" alt="Рендер визиток, бейджа и деловых носителей с напечатанным логотипом АйТек КЦОД">
+            </div>
+            <div class="surface-body">
+              <span>Деловые носители</span>
+              <h3>Визитки, бейджи, конверты</h3>
+              <p>В малом размере важно сохранить первое чтение: АйТек как доверие, КЦОД как направление.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <div class="final-box">
+        <div>
+          <div class="kicker">Итог</div>
+          <h2>АйТек КЦОД - короткая формула инженерного направления</h2>
+        </div>
+        <div>
+          <p class="final-copy">АйТек дает доверие. КЦОД называет продуктовую область. Подпись объясняет аббревиатуру. Система контейнерного брендинга показывает, как знак живет в реальной эксплуатации: от главного бренда до клиентского проекта.</p>
+          <img class="final-logo" src="assets/logo-variants/aitek-kcod-01-base.svg" alt="АйТек КЦОД">
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
